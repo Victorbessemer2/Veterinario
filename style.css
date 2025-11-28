@@ -1,0 +1,266 @@
+/* =======================
+   RESET BÁSICO
+======================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =======================
+   CONTAINER PADRÃO
+======================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* =======================
+   CABEÇALHO E MENU
+======================= */
+header {
+  background-color: #007BFF; /* azul */
+  color: #fff;
+  padding: 15px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Menu */
+nav {
+  position: relative;
+}
+
+nav ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul.menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul.menu li a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger */
+nav input[type="checkbox"] {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+}
+
+/* Responsivo menu */
+@media (max-width: 768px) {
+  nav ul.menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #007BFF;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  nav input[type="checkbox"]:checked ~ ul.menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* =======================
+   SEÇÕES GERAIS
+======================= */
+section {
+  padding: 40px 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #007BFF;
+}
+
+/* =======================
+   FORMULÁRIOS
+======================= */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input[type="submit"],
+button {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+form input[type="submit"]:hover,
+button:hover {
+  background-color: #0056b3;
+}
+
+/* =======================
+   RODAPÉ
+======================= */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #007BFF; /* azul do site */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+
+.mensagem-sucesso {
+  background-color: #28a745;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: slideIn 0.5s forwards, fadeOut 0.5s 3s forwards;
+}
+
+@keyframes slideIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background-color: #007BFF;
+  color: white;
+}
+
+table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+table tr:hover {
+  background-color: #d1ecf1;
+}
+
+table td {
+  word-break: break-word; /* evita overflow */
+}
+
+section h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #007BFF; /* cor combinando com cabeçalho */
+  font-size: 1.5em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
